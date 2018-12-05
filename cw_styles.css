@@ -17,23 +17,46 @@
 
 
 /* Import Basic Design Styles  */
-
-
+@import "cw_designs.css";
 
 /* ===============================
 	General Styles for All Devices
    ===============================
 */
+nav#bottom {
+    display: -webkit-display-flex; 
+    display: flex;
+    justify-content: center;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap; 
+}
 
-
+ul#bottom {
+    -webkit-flex: 0 1 150px;
+    flex: 0 1 150px; 
+}
 
 /* ===============================
 	Mobile Styles up to 480 pixels
    ===============================
 */
-	
+@media only screen and (max-width: 480px) {
+   
+    body {
+    color: rgb(211, 211, 211); 
+    background-color: rgb(51, 51, 51);
+    }
 
+    aside, img, article, section#spotlight {
+        display: none;
+    }
 
+    ul {
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        
+    }
+}
 
 /* ============================================
 	Tablet and Desktop Devices: 481px or more 
