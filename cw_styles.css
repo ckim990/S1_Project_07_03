@@ -5,8 +5,8 @@
    Tutorial 5
    Case Problem 3
    
-   Author:   
-   Date:      
+   Author: Chris Kim  
+   Date:   11.30.18
    
    Filename: cw_styles.css
 
@@ -24,42 +24,150 @@
    ===============================
 */
 nav#bottom {
-    display: -webkit-display-flex; 
     display: flex;
-    justify-content: center;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
     -webkit-flex-flow: row nowrap;
-    flex-flow: row nowrap; 
+    justify-content: center;
+    -webkit-justify-content: center;
 }
 
-ul#bottom {
-    -webkit-flex: 0 1 150px;
-    flex: 0 1 150px; 
+nav#bottom ul {
+    max-width: 150px;
+    flex: 0 1 150px;
 }
 
 /* ===============================
 	Mobile Styles up to 480 pixels
    ===============================
 */
+/* This section of code contains styles that only apply when a certain amount of pixels are reached. This section has code for text color, background color, and flex boxes.*/
 @media only screen and (max-width: 480px) {
-   
     body {
-    color: rgb(211, 211, 211); 
-    background-color: rgb(51, 51, 51);
+        color: rgb(211, 211, 211);
+        background-color: rgb(51, 51, 51);
     }
 
-    aside, img, article, section#spotlight {
+    aside,
+    article img,
+    section#spotlight {
         display: none;
     }
 
-    ul {
+    nav#top ul {
+        display: -webkit-flex;
         display: flex;
+        flex-flow: row wrap;
         -webkit-flex-flow: row wrap;
-        
+    }
+
+    nav#top ul li {
+        flex: 1 1 130px;
+        font-size: 2.2em;
+    }
+
+    nav#top ul li:nth-of-type(1) {
+        background-image: url('cw_image01.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    nav#top ul li:nth-of-type(2) {
+        background-image: url('cw_image02.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    nav#top ul li:nth-of-type(3) {
+        background-image: url('cw_image03.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    nav#top ul li:nth-of-type(4) {
+        background-image: url('cw_image04.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    nav#top ul li:nth-of-type(5) {
+        background-image: url('cw_image05.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    nav#top ul li:nth-of-type(6) {
+        background-image: url('cw_image06.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    p#links {
+        -webkit-flex-flow: row nowrap;
+        display: -webkit-flex;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+    }
+
+    p#links a {
+        color: rgb(255, 255, 255);
+        background-color: rgb(220, 27, 27);
+        border-radius: 20px;
+        padding: 10px;
+        text-decoration: none;
     }
 }
 
 /* ============================================
 	Tablet and Desktop Devices: 481px or more 
    ============================================
-*/
+ */
+/* This section makes only the desktop or tablet mode have these styles. These styles contain flex boxes, changes the sizes, growth rate, and shrink rate of the boxes. This centers the top nav as well as changes its color and making the telephone and email link not be visible. */
+@media only screen and (min-width:481px) {
+    body {
+        flex-flow: row wrap;
+        -webkit-flex-flow: row wrap;
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    article {
+        flex: 2 1 400px;
+    }
+
+    aside {
+        flex: 2 1 200px;
+    }
+
+    nav#top {
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 auto;
+        display: -webkit-flex;
+        display: flex;
+        flex-flow: row nowrap;
+        -webkit-flex-flow: row nowrap;
+        background-color: rgb(51, 51, 51);
+    }
+
+    nav#top ul {
+        justify-content: center;
+        align-items: center;
+        display: -webkit-flex;
+        display: flex;
+        background-color: rgb(51, 51, 51);
+        height: 50px;
+    }
+
+    nav#top ul li {
+        flex: 1 1 auto;
+        max-width: 80px;
+    }
+
+    p#links {
+        display: none;
+    }
+}
 
